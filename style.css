@@ -1,0 +1,295 @@
+
+:root {
+	--formulaeHeight: 30px;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial;
+}
+.container {
+	width: 90%;
+	box-sizing: border-box;
+	background-color: lightgrey;
+	margin: 25px auto;
+	border-radius: 30px;
+	padding: 10px;
+	display: grid;
+	grid-template-rows: 195px 320px;
+	grid-template-columns: 38% 62%;
+	grid-template-areas: "narrow1 narrow1"
+						  "wide1 wide2";
+	grid-gap: 20px;
+}
+
+
+@media (max-width: 900px) {
+	.container {
+		margin: 10px auto;
+		grid-template-rows: 115px 290px 170px;
+		grid-template-columns: 95%;
+		justify-content: center;
+		grid-template-areas: "narrow1"
+							  "wide2"
+							  "wide1";
+		grid-gap: 10px;
+	}
+}
+
+@media (max-width: 600px) {
+	.container {
+		width: 98%;
+		padding: 5px;
+	}
+}
+
+
+.titleBlock { grid-area: narrow1; }
+
+.h1 {
+	font-size: calc(15px + 40 * (100vw / 1366));
+	text-align: center;
+	line-height: calc(45px + 40 * (100vw / 1366));
+	text-transform: uppercase;
+}
+.leftBlock { grid-area: wide1; 
+			background-color: yellow;
+			border-radius: 20px}
+
+.leftBlock__form {
+	height: 90%;
+}
+.form__wrap {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+.arguments {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+
+.input {
+	width: 90px;
+	height: 50px;
+	font-size: calc(15px + 19 * (100vw / 1366));
+	text-align: center;
+	border-radius: 10px;
+}
+
+@media(max-width: 900px) {
+	.form__wrap {
+		display: flex;
+		flex-direction: column;
+	}
+	.arguments {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+	.input {
+		width: 80px;
+		height: 40px;
+	}
+}
+.form__buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding: 5px;
+}
+.submit,
+.reset {
+	width: 140px;
+	height: 50px;
+}
+.submit:active,
+.reset:active {
+	position: relative;
+	top: 3px;
+}
+.rightBlock { grid-area: wide2;
+			  display: flex;
+			  flex-direction: column;
+			  justify-content: space-between;
+}
+.equation {
+	width: 80%;
+	height: 80px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	font-size: 60px;
+	text-align: center;
+	line-height: 70px;
+}
+
+@media(max-width: 900px) {
+	.equation {
+    height: 50px;
+    font-size: 40px;
+    line-height: 40px;
+	}
+}
+@media(max-width: 700px) {
+	.equation {
+		width: 100%;
+		height: 40px;
+		font-size: 25px;
+	}
+}
+
+
+
+.equation div {
+	border: 1px solid blue;
+	width: calc(100% * 10);
+}
+.equation__a {}
+.equation__xSquared {
+}
+.secondDegree {
+    position: relative;
+    top: -83px;
+    left: 23px;
+    font-size: 27px;
+}
+
+@media(max-width: 900px) {
+	.secondDegree {
+		top: -50px;
+	    left: 18px;
+	    font-size: 18px;
+	}
+}
+@media(max-width: 700px) {
+	.secondDegree {
+		top: -50px;
+	    left: 9px;
+	    font-size: 10px;
+	}
+}
+
+
+
+.equation__b {}
+.equation__x {}
+.equation__c {}
+.equation__equal {}
+.equation__zero {}
+
+
+.solution {
+	font-size: calc(14px + 16 * (100vw / 1366));
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+@media(max-width: 900px) {
+	.solution {
+		justify-content: space-evenly;
+	}
+}
+
+
+.solution__message {}
+
+.upMessage {
+	height: 35px;
+	//background-color: rgba(255, 255, 0, 0.8);
+	border-radius: 10px;
+	line-height: 30px;
+	font-size: calc(14px + 16 * (100vw / 1366));
+	padding: 0px 0px 0px 5px;
+}
+.determinant {
+    //background-color: pink;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: calc(35px + 45 * (100vw / 1366));
+}
+.determinant__firstRow {
+	display: flex;
+	flex-direction: row;
+}
+.determinant__formulae,
+.determinant__calculation, 
+.determinant__result {
+	font-size: calc(13px + 16 * (100vw / 1366));
+	text-align: center;
+
+}
+.determinant__formulae p {
+	display: inline;
+}
+.determinant__result {
+	width: auto!important;
+}
+.determinant__degree {
+	font-size: calc(8px + 12 * (100vw / 1366));
+	position: relative;
+	top: -18px;
+	left: 0px;
+}
+
+.determinant__secondRow {
+	padding: 0px 0px 0px 5px;
+	font-size: calc(14px + 16 * (100vw / 1366));
+}
+.roots {
+	height: 180px;
+	//background-color: lightgreen;
+	border-radius: 20px;
+	font-size: calc(13px + 14 * (100vw / 1366));
+}
+.roots__row {
+	height: calc(45px + 45 * (100vw / 1366));
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.x {
+	padding: 0px 5px 0px 5px;
+}
+.xIndex {
+	position: relative;
+	top: 15px;
+	left: 0px;
+	font-size: 20px;
+}
+
+.rootFormula {
+	padding: 10px 10px 0px 10px;
+	text-align: center;
+}
+.rootFormula__up {
+	height: calc(25px + 20 * (100vw / 1366));	//45px
+	box-sizing: border-box;
+	border-bottom: 4px solid black;
+}
+.rootFormula__down {
+	height: calc(25px + 20 * (100vw / 1366));	//45px
+	box-sizing: border-box;
+}
+.rootCalc {
+	padding: 10px 10px 0px 10px;
+	text-align: center;
+}
+.rootCalc__upCalc {
+	height: calc(25px + 20 * (100vw / 1366));
+	box-sizing: border-box;
+	border-bottom: 4px solid black;
+}
+.rootCalc__downCalc {
+	height: calc(25px + 20 * (100vw / 1366));
+	box-sizing: border-box;
+}

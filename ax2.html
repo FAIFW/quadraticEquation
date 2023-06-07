@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="titleBlock">
+			<h1 class="h1">quadratic equation</h1>
+			<div class="equation">
+				<div class="equation__a"><p id="aEquation"></p></div>
+				<div class="equation__xSquared"><p>x</p><p class="secondDegree">2</p></div>
+				<div class="equation__sign"><p id="bSign">+</p></div>
+				<div class="equation__b"><p id="bEquation"></p></div>
+				<div class="equation__x"><p>x</p></div>
+				<div class="equation__sign"><p id="cSign">+</p></div>
+				<div class="equation__c"><p id="cEquation"></p></div>
+				<div class="equation__equal"><p>=</p></div>
+				<div class="equation__zero"><p>0</p></div>
+			</div>
+		</div>
+		<div class="leftBlock">
+			<form action="#" class="leftBlock__form">
+				<div class="form__wrap">
+					<div class="arguments">
+						<div class="blockA">
+							<input type="number" id="aCoefficient" class="input inputNumber"  placeholder="a">
+						</div>
+						<div class="blockB">
+							<input type="number" id="bCoefficient" class="input inputNumber" placeholder="b">
+						</div>
+						<div class="blockC">
+							<input type="number" id="cCoefficient" class="input inputNumber" placeholder="c">
+						</div>
+					</div>
+					<div class="form__buttons">
+						<input type="submit" id="sendCoefficients" value="calculate" class="input submit">
+						<input type="reset" value="clear" class="input reset">
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="rightBlock">
+			<div class="solution">
+				<div class="solution__message upMessage"><p id="upMessage"></p></div>
+				<div class="determinant">
+					<div class="determinant__firstRow">
+						<div class="determinant__formulae"><p>D = b <p class="determinant__degree">2</p> - 4 a c = </p></div>
+						<div class="determinant__calculation"><p id="calculationD"></p></div>
+						<div class="determinant__result"><p id="resultD"></p></div>
+					</div>
+					<div class="determinant__secondRow">
+						<p id="messageD"></p>
+					</div>
+				</div>
+				<div class="solution__message roots">
+					<div class="firstRoot roots__row">
+						<p class="x">X<p class="xIndex">1</p>= </p>
+						<div class="firstRoot__formula rootFormula">
+							<p class="rootFormula__up">-b + √D </p>
+							<p class="rootFormula__down">2×a</p>
+						</div>
+						<p>=</p>
+						<div class="firstRoot__calc rootCalc">
+							<p id="firstRootUpCalc" class="rootCalc__upCalc"></p>
+							<p id="firstRootDownCalc" class="rootCalc__downCalc"></p>
+						</div>
+						<p id="firstRootRes"></p>
+					</div>
+					<div id="secondRoot" class="secondRoot roots__row">
+						<p class="x">X<p class="xIndex">2</p>= </p>
+						<div class="secondRoot__formula rootFormula">
+							<p class="rootFormula__up">-b - √D </p>
+							<p class="rootFormula__down">2×a</p>
+						</div>
+						<p>=</p>
+						<div class="secondRoot__calc rootCalc">
+							<p id="secondRootUpCalc" class="rootCalc__upCalc"></p>
+							<p id="secondRootDownCalc" class="rootCalc__downCalc"></p>
+						</div>
+						<p id="secondRootRes"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src ="script.js"></script>
+</body>
+</html>
