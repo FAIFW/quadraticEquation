@@ -11,123 +11,40 @@ body {
 	font-family: Arial;
 }
 .container {
-	width: 90%;
+	width: 95%;
 	box-sizing: border-box;
 	background-color: lightgrey;
-	margin: 25px auto;
+	margin: 10px auto;
 	border-radius: 30px;
 	padding: 10px;
-	display: grid;
-	grid-template-rows: 195px 320px;
-	grid-template-columns: 38% 62%;
-	grid-template-areas: "narrow1 narrow1"
-						  "wide1 wide2";
-	grid-gap: 20px;
+
 }
-
-
-@media (max-width: 900px) {
-	.container {
-		margin: 10px auto;
-		grid-template-rows: 115px 290px 170px;
-		grid-template-columns: 95%;
-		justify-content: center;
-		grid-template-areas: "narrow1"
-							  "wide2"
-							  "wide1";
-		grid-gap: 10px;
-	}
-}
-
-@media (max-width: 600px) {
-	.container {
-		width: 98%;
-		padding: 5px;
-	}
-}
-
-
-.titleBlock { grid-area: narrow1; }
 
 .h1 {
-	font-size: calc(15px + 40 * (100vw / 1366));
+	font-size: calc(15px + 30 * (100vw / 1366));
 	text-align: center;
 	line-height: calc(45px + 40 * (100vw / 1366));
 	text-transform: uppercase;
 }
-.leftBlock { grid-area: wide1; 
-			background-color: yellow;
-			border-radius: 20px}
-
-.leftBlock__form {
-	height: 90%;
-}
-.form__wrap {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-}
-.arguments {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-}
 
 
-.input {
-	width: 90px;
-	height: 50px;
-	font-size: calc(15px + 19 * (100vw / 1366));
-	text-align: center;
-	border-radius: 10px;
+/*		equation section		*/
+.equationBlock {
+	display: grid;
+	grid-template-columns: 70% 30%;
+	grid-template-rows: 80px;
+	grid-template-areas: 
+				"equation  btns";
 }
 
-@media(max-width: 900px) {
-	.form__wrap {
-		display: flex;
-		flex-direction: column;
-	}
-	.arguments {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-	}
-	.input {
-		width: 80px;
-		height: 40px;
-	}
-}
-.form__buttons {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	padding: 5px;
-}
-.submit,
-.reset {
-	width: 140px;
-	height: 50px;
-}
-.submit:active,
-.reset:active {
-	position: relative;
-	top: 3px;
-}
-.rightBlock { grid-area: wide2;
-			  display: flex;
-			  flex-direction: column;
-			  justify-content: space-between;
-}
 .equation {
-	width: 80%;
-	height: 80px;
+	width: 90%;
 	margin: 0 auto;
 	display: flex;
-	justify-content: space-between;
 	font-size: 60px;
 	text-align: center;
 	line-height: 70px;
+	grid-template-areas: "equation";
 }
 
 @media(max-width: 900px) {
@@ -145,10 +62,9 @@ body {
 	}
 }
 
-
-
 .equation div {
 	border: 1px solid blue;
+	border-radius: 15px;
 	width: calc(100% * 10);
 }
 .equation__a {}
@@ -184,6 +100,43 @@ body {
 .equation__equal {}
 .equation__zero {}
 
+.input {
+	width: 100px;
+	height: 50px;
+	font-size: calc(15px + 19 * (100vw / 1366));
+	text-align: center;
+	border-radius: 10px;
+}
+
+.formButtons {
+	grid-template-areas: "btns";
+	display: flex;
+	justify-content: space-around;
+    align-items: center;
+}
+
+.submit,
+.reset {
+	width: 180px;
+	height: 60px;
+}
+.submit:active,
+.reset:active {
+	position: relative;
+	top: 3px;
+}
+
+
+
+
+
+
+.solutionBlock { grid-area: wide2;
+			  display: flex;
+			  flex-direction: column;
+			  justify-content: space-between;
+}
+
 
 .solution {
 	font-size: calc(14px + 16 * (100vw / 1366));
@@ -198,35 +151,25 @@ body {
 	}
 }
 
-
-.solution__message {}
-
 .upMessage {
-	height: 35px;
+	height: auto;
 	//background-color: rgba(255, 255, 0, 0.8);
 	border-radius: 10px;
 	line-height: 30px;
 	font-size: calc(14px + 16 * (100vw / 1366));
-	padding: 0px 0px 0px 5px;
+	padding: 10px 0px 0px 10px;
 }
 .determinant {
-    //background-color: pink;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: calc(35px + 45 * (100vw / 1366));
-}
-.determinant__firstRow {
-	display: flex;
-	flex-direction: row;
+    display: none;
+    flex-direction: row;
+    height: auto;
 }
 .determinant__formulae,
 .determinant__calculation, 
 .determinant__result {
 	font-size: calc(13px + 16 * (100vw / 1366));
 	text-align: center;
-
+	padding: 0px 5px 0px 5px;
 }
 .determinant__formulae p {
 	display: inline;
@@ -240,11 +183,6 @@ body {
 	top: -18px;
 	left: 0px;
 }
-
-.determinant__secondRow {
-	padding: 0px 0px 0px 5px;
-	font-size: calc(14px + 16 * (100vw / 1366));
-}
 .roots {
 	height: 180px;
 	//background-color: lightgreen;
@@ -257,6 +195,13 @@ body {
 	flex-direction: row;
 	align-items: center;
 }
+.firstRoot {
+	display: none;
+}
+.secondRoot {
+	display: none;
+}
+
 .x {
 	padding: 0px 5px 0px 5px;
 }
