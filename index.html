@@ -20,7 +20,7 @@
 					<div class="gridWrapper">
 						<div class="equation">
 							<div class="equation__a">
-								<input type="number" value="0" id="aCoefficient" class="input inputNumber" placeholder="a" pattern="[^e]">
+								<input type="text" value="1" id="aCoefficient" class="input inputNumber" placeholder="a" pattern="[0-9]">
 							</div>
 							<div class="equation__xSquared">
 								<p>x</p>
@@ -30,7 +30,7 @@
 								<p id="bSign">+</p>
 							</div>
 							<div class="equation__b">
-								<input type="number" value="0" id="bCoefficient" class="input inputNumber" placeholder="b" pattern="[0123456789]" oninput="changeSignB()">
+								<input type="text" value="0" id="bCoefficient" class="input inputNumber" placeholder="b" pattern="[0123456789]" oninput="changeSignB()">
 							</div>
 							<div class="equation__x">
 								<p>x</p>
@@ -40,7 +40,7 @@
 							</div>
 							<div class="equation__c">
 								<p id="cEquation"></p>
-								<input type="number" value="0" id="cCoefficient" class="input inputNumber" placeholder="c" pattern="[0123456789]" oninput="changeSignC()">
+								<input type="text" value="0" id="cCoefficient" class="input inputNumber" placeholder="c" pattern="[0123456789]" oninput="changeSignC()">
 							</div>
 							<div class="equation__equal">
 								<p>=</p>
@@ -51,7 +51,7 @@
 						</div>
 					</div>
 					<div class="formButtons">
-						<input type="submit" id="sendCoefficients" value="calculate" class="input submit">
+						<input type="button" id="sendCoefficients" value="calculate" class="input btnCalc">
 						<input type="reset" id="clearForm" value="clear" class="input reset">
 					</div>
 				</div>

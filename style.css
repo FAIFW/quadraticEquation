@@ -105,7 +105,7 @@ body {
 
 @media(max-width: 900px) {}
 
-.submit,
+.btnCalc,
 .reset {
 	width: calc(140px + 30 * (100vw / 1366));
 	height: 40px;
@@ -113,7 +113,7 @@ body {
 	font-size: calc(10px + 15 * (100vw / 1366));
 }
 
-.submit:active,
+.btnCalc:active,
 .reset:active {
 	position: relative;
 	top: 3px;
