@@ -61,6 +61,7 @@ function getUserInputs() {
 
 	let b = (function() {
 			let submitedB = document.getElementById("bCoefficient").value;
+
 			return +submitedB;
 		})();
 
@@ -71,6 +72,26 @@ function getUserInputs() {
 
 	return coefArray = [a, b, c];
 }
+
+// these 2 functions for changing signs before b and c: seems very stupid
+function changeSignB() {
+	let num = document.getElementById("bCoefficient").value;
+	if (num < 0) {
+		document.getElementById("bSign").innerText = "-"
+	} else if (num >= 0) {
+		document.getElementById("bSign").innerText = "+"
+	}
+}
+
+function changeSignC() {
+	let num = document.getElementById("cCoefficient").value;
+	if (num < 0) {
+		document.getElementById("cSign").innerText = "-"
+	} else if (num >= 0) {
+		document.getElementById("cSign").innerText = "+"
+	}
+}
+
 
 function calcD() {
 	getUserInputs();
@@ -92,7 +113,7 @@ function calcD() {
 }
 
 function calcRoots() {
-
+	cleanFields();
 	calcD();
 
 	(function(){

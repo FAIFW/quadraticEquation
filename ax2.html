@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
 	<link rel="stylesheet" href="reset.css">
 	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 	<div class="container">
 		<div class="titleBlock">
@@ -15,20 +17,38 @@
 		<div class="wrap">
 			<form action="#">
 				<div class="equationBlock">
-					<div class="equation">
-						<div class="equation__a">
-							<input type="number" value="0" id="aCoefficient" class="input inputNumber"  placeholder="a" pattern="[^e]">
+					<div class="gridWrapper">
+						<div class="equation">
+							<div class="equation__a">
+								<input type="number" value="0" id="aCoefficient" class="input inputNumber" placeholder="a" pattern="[^e]">
+							</div>
+							<div class="equation__xSquared">
+								<p>x</p>
+								<p class="secondDegree">2</p>
+							</div>
+							<div class="equation__sign">
+								<p id="bSign">+</p>
+							</div>
+							<div class="equation__b">
+								<input type="number" value="0" id="bCoefficient" class="input inputNumber" placeholder="b" pattern="[0123456789]" oninput="changeSignB()">
+							</div>
+							<div class="equation__x">
+								<p>x</p>
+							</div>
+							<div class="equation__sign">
+								<p id="cSign">+</p>
+							</div>
+							<div class="equation__c">
+								<p id="cEquation"></p>
+								<input type="number" value="0" id="cCoefficient" class="input inputNumber" placeholder="c" pattern="[0123456789]" oninput="changeSignC()">
+							</div>
+							<div class="equation__equal">
+								<p>=</p>
+							</div>
+							<div class="equation__zero">
+								<p>0</p>
+							</div>
 						</div>
-						<div class="equation__xSquared"><p>x</p><p class="secondDegree">2</p></div>
-						<div class="equation__b">
-							<input type="number" value="0" id="bCoefficient" class="input inputNumber" placeholder="b" pattern="[0123456789]">
-						</div>
-						<div class="equation__x"><p>x</p></div>
-						<div class="equation__c"><p id="cEquation"></p>
-							<input type="number" value="0" id="cCoefficient" class="input inputNumber" placeholder="c" pattern="[0123456789]">
-						</div>
-						<div class="equation__equal"><p>=</p></div>
-						<div class="equation__zero"><p>0</p></div>
 					</div>
 					<div class="formButtons">
 						<input type="submit" id="sendCoefficients" value="calculate" class="input submit">
@@ -39,15 +59,25 @@
 		</div>
 		<div class="solutionBlock">
 			<div class="solution">
-				<div class="solution__message upMessage"><p id="upMessage"></p></div>
+				<div class="solution__message upMessage">
+					<p id="upMessage"></p>
+				</div>
 				<div class="determinant" id="determinant">
-					<div class="determinant__formulae"><p>D = b <p class="determinant__degree">2</p> - 4 a c = </p></div>
-					<div class="determinant__calculation"><p id="calculationD"></p></div>
-					<div class="determinant__result"><p id="resultD"></p></div>
+					<div class="determinant__formulae">
+						<p>D = b
+						<p class="determinant__degree">2</p> - 4 a c = </p>
+					</div>
+					<div class="determinant__calculation">
+						<p id="calculationD"></p>
+					</div>
+					<div class="determinant__result">
+						<p id="resultD"></p>
+					</div>
 				</div>
 				<div class="roots">
 					<div class="firstRoot roots__row" id="firstRoot">
-						<p class="x">X<p class="xIndex">1</p>= </p>
+						<p class="x">X
+						<p class="xIndex">1</p>= </p>
 						<div class="firstRoot__formula rootFormula">
 							<p class="rootFormula__up">-b + √D </p>
 							<p class="rootFormula__down">2a</p>
@@ -55,12 +85,13 @@
 						<p>=</p>
 						<div class="firstRoot__calc rootCalc">
 							<p class="rootCalc__upCalc" id="firstRootUpCalc"></p>
-							<p  class="rootCalc__downCalc" id="firstRootDownCalc"></p>
+							<p class="rootCalc__downCalc" id="firstRootDownCalc"></p>
 						</div>
 						<p id="firstRootRes"></p>
 					</div>
 					<div class="secondRoot roots__row" id="secondRoot">
-						<p class="x">X<p class="xIndex">2</p>= </p>
+						<p class="x">X
+						<p class="xIndex">2</p>= </p>
 						<div class="secondRoot__formula rootFormula">
 							<p class="rootFormula__up">-b - √D </p>
 							<p class="rootFormula__down">2a</p>
@@ -68,7 +99,7 @@
 						<p>=</p>
 						<div class="secondRoot__calc rootCalc">
 							<p class="rootCalc__upCalc" id="secondRootUpCalc"></p>
-							<p class="rootCalc__downCalc"  id="secondRootDownCalc"></p>
+							<p class="rootCalc__downCalc" id="secondRootDownCalc"></p>
 						</div>
 						<p id="secondRootRes"></p>
 					</div>
@@ -76,7 +107,8 @@
 			</div>
 		</div>
 	</div>
-	<script src ="script2.js"></script>
+	<script src="script2.js"></script>
 
 </body>
+
 </html>
